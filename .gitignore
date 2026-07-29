@@ -1,13 +1,9 @@
 # Node
 node_modules/
-npm-debug.log
+
+# Playwright
+playwright-report/
+test-results/
 
 # Environment
 .env
-
-# VS Code
-.vscode/
-
-# OS
-.DS_Store
-Thumbs.db
