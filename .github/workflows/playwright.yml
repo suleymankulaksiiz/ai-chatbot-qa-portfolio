@@ -27,7 +27,20 @@ jobs:
         node-version: 20
 
 
-    - name: Install dependencies
+    - name: Install app dependencies
+      run: |
+        cd app
+        npm install
+
+
+    - name: Start application
+      run: |
+        cd app
+        node server.js &
+        sleep 5
+
+
+    - name: Install automation dependencies
       run: |
         cd automation
         npm install
