@@ -28,22 +28,18 @@ jobs:
 
 
     - name: Install dependencies
-      working-directory: automation
-      run: npm install
+      run: |
+        cd automation
+        npm install
 
 
     - name: Install Playwright browsers
-      working-directory: automation
-      run: npx playwright install
-
-
-    - name: Start application
-      working-directory: app
       run: |
-        npm install
-        node server.js &
+        cd automation
+        npx playwright install --with-deps
 
 
     - name: Run Playwright tests
-      working-directory: automation
-      run: npx playwright test
+      run: |
+        cd automation
+        npx playwright test
